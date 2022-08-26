@@ -1,0 +1,57 @@
+import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import { useRoute, useNavigation } from "@react-navigation/native";
+import { useEffect } from "react";
+import DetailItem from "./DetailItem";
+
+const DetailsScreen = () => {
+  const route = useRoute();
+  const character = route.params.character;
+
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions({ title: character.name });
+  }, [navigation, character]);
+
+  const keys = [
+    { visibleKey: "Films", actualKey: "films" },
+    { visibleKey: "Short Films", actualKey: "shortFilms" },
+    { visibleKey: "TV Shows", actualKey: "tvShows" },
+    { visibleKey: "Video Games", actualKey: "videoGames" },
+    { visibleKey: "Park Attractions", actualKey: "parkAttractions" },
+    { visibleKey: "Allies", actualKey: "allies" },
+    { visibleKey: "Enemies", actualKey: "enemies" },
+  ];
+
+  return (
+    <View style={styles.rootContainer}>
+      <Image source={{ uri: character.imageUrl }} style={styles.image}></Image>
+      <ScrollView style = {styles.detailsContainer}>
+        {
+            keys.map((key, index) => {
+                console.log("key is", key, "and value is", character[key.actualKey]);
+                return (
+                    <DetailItem character={character} key = {index} keyObject = {key}></DetailItem>
+                );
+            })
+        }
+      </ScrollView>
+    </View>
+  );
+};
+
+export default DetailsScreen;
+
+const styles = StyleSheet.create({
+  rootContainer: {
+    alignItems: "center"
+  },
+  image: {
+    height: 200,
+    width: 200,
+    resizeMode: "stretch",
+    borderRadius: 100,
+  },
+  detailsContainer: {
+    width: '100%'
+  }
+});
