@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import { View, Image, ScrollView, StyleSheet } from "react-native";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { useEffect } from "react";
 import DetailItem from "./DetailItem";
@@ -25,16 +25,17 @@ const DetailsScreen = () => {
   return (
     <View style={styles.rootContainer}>
       <Image source={{ uri: character.imageUrl }} style={styles.image}></Image>
-      <ScrollView style = {styles.detailsContainer}>
-        {
-            keys.map((key, index) => {
-                console.log("key is", key, "and value is", character[key.actualKey]);
-                return (
-                    <DetailItem character={character} key = {index} keyObject = {key}></DetailItem>
-                );
-            })
-        }
-      </ScrollView>
+      <View style = {styles.detailsContainer}>
+        <ScrollView>
+          {
+              keys.map((key, index) => {
+                  return (
+                      <DetailItem character={character} key = {index} keyObject = {key}></DetailItem>
+                  );
+              })
+          }
+        </ScrollView>
+      </View>
     </View>
   );
 };
@@ -43,15 +44,19 @@ export default DetailsScreen;
 
 const styles = StyleSheet.create({
   rootContainer: {
-    alignItems: "center"
+    alignItems: "center",
+    flex: 1
   },
   image: {
     height: 200,
     width: 200,
     resizeMode: "stretch",
     borderRadius: 100,
+    marginVertical: 15
   },
   detailsContainer: {
-    width: '100%'
+    width: '90%',
+    flex: 1,
+    marginBottom: 15
   }
 });

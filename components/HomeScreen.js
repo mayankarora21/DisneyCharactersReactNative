@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
 import SearchBar  from './SearchBar';
-import disneyCharacterList from '../data/DisneyCharactersList';
 import { fetchDisneyCharacters } from '../util/Networking';
 import CharacterItem from './CharacterItem';
 
@@ -13,7 +12,6 @@ const HomeScreen = () => {
         const getCharacterList = async () => {
             try{
                 const characterList = await fetchDisneyCharacters();
-                console.log('character list is', characterList);
                 setDisneyCharacterList(characterList);
                 setFilteredDisneyCharacterList(characterList);
             }
@@ -44,5 +42,7 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
     container: {
+        padding: 15,
+        flex: 1,
     }
 })

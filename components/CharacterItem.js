@@ -1,4 +1,4 @@
-import {View, Text, Image, StyleSheet, Pressable, ScrollView} from 'react-native';
+import {Text, Image, StyleSheet, Pressable, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const CharacterItem = ({character}) => {
@@ -24,8 +24,7 @@ export default CharacterItem;
 const styles = StyleSheet.create({
     characterContainer: {
         borderBottomWidth: 1,
-        marginBottom: 10,
-        padding: 5,
+        padding: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
