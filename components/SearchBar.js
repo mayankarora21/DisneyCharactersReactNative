@@ -1,11 +1,20 @@
 import { View, TextInput, StyleSheet } from "react-native";
+import { characterActions } from "../store/character-slice";
+import {useDispatch} from 'react-redux';
 
-const SearchBar = ({ handleTextChange }) => {
+const SearchBar = () => {
+
+  const dispatch = useDispatch();
+
+  const handleTextChange = (text) => {
+    dispatch(characterActions.filterCharacterList(text));
+  }
+
   return (
     <View>
       <TextInput
         placeholder="Search"
-        onChangeText={(text) => handleTextChange(text)}
+        onChangeText={handleTextChange}
         style = {styles.searchBar}
       ></TextInput>
     </View>

@@ -1,33 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import SearchBar  from './SearchBar';
-import { fetchDisneyCharacters } from '../util/Networking';
 import CharacterItem from './CharacterItem';
 
-const HomeScreen = () => {
-    const [disneyCharacterList, setDisneyCharacterList] = useState([]);
-    const [filteredDisneyCharacterList, setFilteredDisneyCharacterList] = useState([]);
+import { getCharacterList } from '../store/character-actions';
+import {useSelector, useDispatch} from 'react-redux';
 
+const HomeScreen = () => {
+    const dispatch = useDispatch();
+    const filteredDisneyCharacterList = useSelector(state => state.filteredDisneyCharacterList);
+    
     useEffect(() => {
-        const getCharacterList = async () => {
-            try{
-                const characterList = await fetchDisneyCharacters();
-                setDisneyCharacterList(characterList);
-                setFilteredDisneyCharacterList(characterList);
-            }
-            catch(error){
-                console.log('There is some error in fetching disney characters. Error is:', error);
-            }
-        }
-        getCharacterList();
+        dispatch(getCharacterList());
     }, [])
 
-    const filterCharacterList = (searchText) => {
-        setFilteredDisneyCharacterList(disneyCharacterList.filter(character => character.name.toLowerCase().includes(searchText.toLowerCase())));
-    }
+
     return (
         <View style = {styles.container}>
-            <SearchBar handleTextChange={filterCharacterList}></SearchBar>
+            <SearchBar></SearchBar>
             <FlatList data = {filteredDisneyCharacterList} keyExtractor = {(item, index) => index} renderItem = {(itemData) => {
                 return (
                     <CharacterItem character = {itemData.item}></CharacterItem>
