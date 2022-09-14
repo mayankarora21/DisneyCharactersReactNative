@@ -1,4 +1,4 @@
-import {Text, Image, StyleSheet, Pressable, ScrollView} from 'react-native';
+import {Text, Image, StyleSheet, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const CharacterItem = ({character}) => {
