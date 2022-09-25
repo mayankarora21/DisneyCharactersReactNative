@@ -1,13 +1,10 @@
 import { View, Image, ScrollView, StyleSheet } from "react-native";
-import { useRoute, useNavigation } from "@react-navigation/native";
 import { useEffect } from "react";
 import DetailItem from "./DetailItem";
 
-const DetailsScreen = () => {
-  const route = useRoute();
+const DetailsScreen = ({route, navigation}) => {
   const character = route.params.character;
 
-  const navigation = useNavigation();
   useEffect(() => {
     navigation.setOptions({ title: character.name });
   }, [navigation, character]);

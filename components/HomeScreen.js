@@ -14,15 +14,16 @@ const HomeScreen = () => {
         dispatch(getCharacterList());
     }, [])
 
+    const renderCharacterItem = (itemData) => {
+        return (
+            <CharacterItem character = {itemData.item}></CharacterItem>
+        );
+    }
 
     return (
         <View style = {styles.container}>
             <SearchBar></SearchBar>
-            <FlatList data = {filteredDisneyCharacterList} keyExtractor = {(item, index) => index} renderItem = {(itemData) => {
-                return (
-                    <CharacterItem character = {itemData.item}></CharacterItem>
-                );
-            }}></FlatList>
+            <FlatList data = {filteredDisneyCharacterList} keyExtractor = {(item, index) => index} renderItem = {renderCharacterItem}></FlatList>
         </View>
     );
 }
