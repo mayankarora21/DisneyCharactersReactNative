@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen should render correctly 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "padding": 15,
+    }
+  }
+>
+  <View>
+    <TextInput
+      onChangeText={[Function]}
+      placeholder="Search"
+      style={
+        {
+          "borderWidth": 1,
+          "padding": 10,
+        }
+      }
+    />
+  </View>
+  <RCTScrollView
+    data={
+      [
+        {
+          "imageUrl": "https://static.wikia.nocookie.net/disney/images/8/80/Profile_-_627.png",
+          "name": "Character 1",
+        },
+        {
+          "imageUrl": "https://static.wikia.nocookie.net/disney/images/3/3f/90%27s_Adventure_Bear_profile.png",
+          "name": "Character 2",
+        },
+        {
+          "imageUrl": "https://static.wikia.nocookie.net/disney/images/1/1e/Profile_-_Ace.png",
+          "name": "Character 3",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "borderBottomWidth": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "padding": 10,
+            }
+          }
+        >
+          <Text>
+            Character 1
+          </Text>
+          <Image
+            source={
+              {
+                "uri": "https://static.wikia.nocookie.net/disney/images/8/80/Profile_-_627.png",
+              }
+            }
+            style={
+              {
+                "borderRadius": 50,
+                "height": 100,
+                "resizeMode": "stretch",
+                "width": 100,
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "borderBottomWidth": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "padding": 10,
+            }
+          }
+        >
+          <Text>
+            Character 2
+          </Text>
+          <Image
+            source={
+              {
+                "uri": "https://static.wikia.nocookie.net/disney/images/3/3f/90%27s_Adventure_Bear_profile.png",
+              }
+            }
+            style={
+              {
+                "borderRadius": 50,
+                "height": 100,
+                "resizeMode": "stretch",
+                "width": 100,
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "borderBottomWidth": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "padding": 10,
+            }
+          }
+        >
+          <Text>
+            Character 3
+          </Text>
+          <Image
+            source={
+              {
+                "uri": "https://static.wikia.nocookie.net/disney/images/1/1e/Profile_-_Ace.png",
+              }
+            }
+            style={
+              {
+                "borderRadius": 50,
+                "height": 100,
+                "resizeMode": "stretch",
+                "width": 100,
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "height": 0,
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;

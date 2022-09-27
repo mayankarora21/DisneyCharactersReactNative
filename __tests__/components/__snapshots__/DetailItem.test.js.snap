@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailItem should render correctly when films array is empty 1`] = `
+<Text
+  style={
+    {
+      "borderBottomWidth": 1,
+      "padding": 10,
+    }
+  }
+>
+  Films
+  : 
+  No Films
+</Text>
+`;
+
+exports[`DetailItem should render correctly when films array is not empty 1`] = `
+<Text
+  style={
+    {
+      "borderBottomWidth": 1,
+      "padding": 10,
+    }
+  }
+>
+  Films
+  : 
+  Film1, Film2
+</Text>
+`;
